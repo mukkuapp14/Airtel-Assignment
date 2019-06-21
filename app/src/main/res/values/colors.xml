@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#721da8</color>
+    <color name="colorPrimaryDark">#651697</color>
+    <color name="colorAccent">#721da8</color>
+
+    <color name="colorPrimaryNew">#721da8</color>
+    <color name="colorPrimaryDarkNew">#651697</color>
+    <color name="blue_hyperlink">#5881c2</color>
+    <color name="green">#9cc79c</color>
+    <color name="disabled_grey">#efeeee</color>
+    <color name="graph_color">#89d3e0</color>
+
+    <color name="text_color">#151515</color>
+    <color name="textPrimary">#f5f5f5</color>
+    <color name="errorText">#ff7878</color>
+    <color name="textPrimaryDark">#95aab4</color>
+
+    <color name="fingerprint">#263237</color>
+    <integer-array name="colors">
+        <item>@color/holo_blue_dark</item>
+        <item>@color/holo_yellow_dark</item>
+        <item>@color/holo_green_dark</item>
+        <item>@color/holo_purple_dark</item>
+        <item>@color/holo_red_dark</item>
+    </integer-array>
+
+    <integer-array name="gplus_colors">
+        <item>@color/gplus_color_1</item>
+        <item>@color/gplus_color_2</item>
+        <item>@color/gplus_color_3</item>
+        <item>@color/gplus_color_4</item>
+    </integer-array>
+
+    <integer-array name="pocket_bar_colors">
+        <item>@color/pocket_color_1</item>
+        <item>@color/pocket_color_1</item>
+        <item>@color/pocket_color_1</item>
+        <item>@color/pocket_color_1</item>
+        <!--<item>@color/pocket_color_2</item>
+        <item>@color/pocket_color_2</item>
+        <item>@color/pocket_color_2</item>
+        <item>@color/pocket_color_2</item>
+        <item>@color/pocket_color_3</item>
+        <item>@color/pocket_color_3</item>
+        <item>@color/pocket_color_3</item>
+        <item>@color/pocket_color_3</item> -->
+    </integer-array>
+
+    <integer-array name="pocket_background_colors">
+        <item>@color/pocket_color_1</item>
+        <item>@color/pocket_color_2</item>
+        <item>@color/pocket_color_3</item>
+        <item>@color/pocket_color_4</item>
+    </integer-array>
+    <color name="black">#151515</color>
+
+    <color name="pocket_color_1">#636363</color>
+    <color name="pocket_color_2">#34bdb7</color>
+    <color name="pocket_color_3">#ee4458</color>
+    <color name="pocket_color_4">#fcb74d</color>
+
+    <color name="gplus_color_1">#3e802f</color>
+    <color name="gplus_color_2">#f4b400</color>
+    <color name="gplus_color_3">#427fed</color>
+    <color name="gplus_color_4">#b23424</color>
+
+    <color name="holo_blue_dark">#0099cc</color>
+    <color name="holo_yellow_dark">#ff8800</color>
+    <color name="holo_green_dark">#3e9405</color>
+    <color name="holo_purple_dark">#9933cc</color>
+    <color name="transparent">#00000000</color>
+    <!--<color name="holo_red_dark">#c72121</color>-->
+    <color name="holo_red_dark">#fc6501</color>
+    <color name="white">#ffffff</color>
+    <color name="orange">#ff7a13</color>
+    <color name="soft_green">#721da8</color>
+    <color name="dark_red">#c3171a</color>
+    <color name="facebook_blue">#3b5998</color>
+    <color name="black_background">#878383</color>
+    <color name="brown">#a75101</color>
+    <color name="dark_brown">#7e3d00</color>
+    <color name="black_shade">#d7d0ca</color>
+    <color name="olive_green">#7dc680</color>
+    <color name="hr_green">#35d179</color>
+    <color name="light_black">#1e1e1e</color>
+    <color name="faded_black">#848484</color>
+    <color name="faded_background">#f2f2f2</color>
+    <color name="system_background_default">#a3a3a3</color>
+</resources>

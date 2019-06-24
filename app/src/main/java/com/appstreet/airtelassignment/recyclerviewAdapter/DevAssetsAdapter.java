@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,7 +44,6 @@ public class DevAssetsAdapter extends RecyclerView.Adapter<DevAssetsAdapter.Opti
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(activity, DetailActivity.class);
-//                intent.putExtra("index", i);
                 intent.putExtra("devdata", itemList.get(i));
                 activity.startActivity(intent);
             }

@@ -32,7 +32,7 @@ public class App extends Application implements HasActivityInjector {
         component.inject(this);
     }
 
-    public static AppComponent getAppComponent() {
+    public AppComponent getAppComponent() {
         return component;
     }
 }

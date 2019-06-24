@@ -7,9 +7,8 @@ import android.widget.Toast;
 import com.appstreet.airtelassignment.data.api.ApiInterface;
 import com.appstreet.airtelassignment.data.api.RetrofitClient;
 import com.appstreet.airtelassignment.data.datamodel.DevAssets;
-import com.appstreet.airtelassignment.views.MainActivity;
+import com.appstreet.airtelassignment.utils.ResponseStatus;
 
-import java.io.IOException;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -18,7 +17,6 @@ import javax.inject.Singleton;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
 
 @Singleton
 public class MainRepo {
@@ -31,25 +29,32 @@ public class MainRepo {
     }
 
     private MutableLiveData<List<DevAssets>> devAssetsLiveData = new MutableLiveData<>();
+    private MutableLiveData<ResponseStatus> responseStatusLiveData = new MutableLiveData<>();
 
     public void getDevAssets(){
+        responseStatusLiveData.setValue(ResponseStatus.LOADING);
         ApiInterface apiInterface = RetrofitClient.getClient().create(ApiInterface.class);
         apiInterface.getDevAssets().enqueue(new Callback<List<DevAssets>>() {
             @Override
             public void onResponse(Call<List<DevAssets>> call, Response<List<DevAssets>> response) {
                 Log.d("DEV_DATA", response.body().get(0).getRepo().getName());
                 devAssetsLiveData.setValue(response.body());
+                responseStatusLiveData.setValue(ResponseStatus.SUCCESS);
             }
 
             @Override
             public void onFailure(Call<List<DevAssets>> call, Throwable t) {
-
+                responseStatusLiveData.setValue(ResponseStatus.ERROR);
             }
         });
     }
 
     public MutableLiveData<List<DevAssets>> getAllDevAssets(){
         return devAssetsLiveData;
+    }
+
+    public MutableLiveData<ResponseStatus> getResponseStatus() {
+        return responseStatusLiveData;
     }
 
 }

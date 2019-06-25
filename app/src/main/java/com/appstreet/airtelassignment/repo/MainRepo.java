@@ -33,8 +33,8 @@ public class MainRepo {
 
     public void getDevAssets(){
         responseStatusLiveData.setValue(ResponseStatus.LOADING);
-        ApiInterface apiInterface = RetrofitClient.getClient().create(ApiInterface.class);
-        apiInterface.getDevAssets().enqueue(new Callback<List<DevAssets>>() {
+//        ApiInterface apiInterface = RetrofitClient.getClient().create(ApiInterface.class);
+        mApiInterface.getDevAssets().enqueue(new Callback<List<DevAssets>>() {
             @Override
             public void onResponse(Call<List<DevAssets>> call, Response<List<DevAssets>> response) {
                 Log.d("DEV_DATA", response.body().get(0).getRepo().getName());

@@ -10,6 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.appstreet.airtelassignment.R;
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private DevAssetsAdapter devAssetsAdapter;
     private SwipeRefreshLayout swipeRefreshLayout;
+    private TextView retryTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         devAssetsObserver();
         responseStatusObserver();
         viewModel.getAllDevAssetsVM();
+
+        retryTV = (TextView) findViewById(R.id.retry_txt);
 
         swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
         devAssetsAdapter = new DevAssetsAdapter(this);
@@ -66,9 +71,14 @@ public class MainActivity extends AppCompatActivity {
                     switch (responseStatus) {
                         case SUCCESS:
                             Toast.makeText(MainActivity.this, "Success", Toast.LENGTH_SHORT).show();
+                            retryTV.setVisibility(View.GONE);
+                            recyclerView.setVisibility(View.VISIBLE);
                             break;
                         case ERROR:
                             Toast.makeText(MainActivity.this, "Error. Please try again later", Toast.LENGTH_LONG).show();
+                            recyclerView.setVisibility(View.GONE);
+                            retryTV.setVisibility(View.VISIBLE);
+                            return;
                     }
                 }
             }
